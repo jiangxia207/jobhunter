@@ -231,20 +231,6 @@ public class MeiguiSpider implements PageProcessor{
         params.put("order", "book_view DESC,book_uptime DESC");
         
         req.setRequestBody(HttpRequestBody.form(params, "utf-8"));
-        
-//        HttpRequestBody.form(Map\ params, String encoding);
-//        
-//        NameValuePair[] values = new NameValuePair[4];
-//        values[0] = new BasicNameValuePair("p", "12");
-//        values[1] = new BasicNameValuePair("limit", "10");
-//        values[2] = new BasicNameValuePair("ul", "1");
-//        values[3] = new BasicNameValuePair("order", "book_view DESC,book_uptime DESC");
-
-//
-//        Map nameValuePair = new HashMap();
-//        nameValuePair.put("nameValuePair", values);
-//        req.setExtras(nameValuePair);        
-        
         Spider.create(this).addRequest(req).thread(1).run();
     }
     
