@@ -29,6 +29,8 @@ public class DatetimeUtilies {
     public static final String DATE_TIME_MIN = "yyyy-MM-dd HH:mm";
 
     public static final String DATE = "yyyy/MM/dd";
+    
+    public static final String DOT_DATE = "yyyy.MM.dd";
 
     public static final String TIME = "HH:mm:ss";
 

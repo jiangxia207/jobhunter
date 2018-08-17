@@ -245,6 +245,7 @@ public class MeiguiSpider implements CrawlPageProcess{
                 episodeImage.setCode(index);
                 episodeImage.setImg(img.split("\\?")[0]);
                 
+                
                 imgs.add(episodeImage);
                 index++;
             }

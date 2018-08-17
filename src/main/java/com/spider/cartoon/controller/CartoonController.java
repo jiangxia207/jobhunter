@@ -29,8 +29,12 @@ public class CartoonController {
     @Qualifier("meiguiSpider")
     private CrawlPageProcess meiguiSpider;
     
+    @Autowired
+    @Qualifier("mkzhanSpider")
+    private CrawlPageProcess mkzhanSpider;
     
-    private ExecutorService executorService = Executors.newSingleThreadExecutor();
+    
+    private ExecutorService executorService = Executors.newFixedThreadPool(2);
     
     @ApiOperation(value = "玫瑰")
     @GetMapping(value = "/meigui/crawl/all")
@@ -41,11 +45,11 @@ public class CartoonController {
     }
     
     
-    @ApiOperation(value = "玫瑰")
-    @GetMapping(value = "/meigui/crawl/update")
+    @ApiOperation(value = "mkzhan")
+    @GetMapping(value = "/mkzhan/crawl/all")
     public Res<Cartoon> save(HttpServletRequest request) {
         
-        executorService.submit(new SpiderTask(meiguiSpider));
+        executorService.submit(new SpiderTask(mkzhanSpider));
         return Res.success();
     }
 
